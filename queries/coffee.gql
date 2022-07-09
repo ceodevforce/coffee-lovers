@@ -1,0 +1,17 @@
+query coffee {
+  baseDrinks {
+    title
+    drinkImage {
+      url
+    }
+    milk {
+      milkOptions
+      foamMaster
+    }
+    flavor {
+      syrups
+      additives
+    }
+    size
+  }
+}

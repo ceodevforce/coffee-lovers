@@ -23,6 +23,8 @@ const getUserByEmailQuery = gql`
   }
 `;
 
+const updateUserMutation = gql``
+
 export default defineEventHandler(async (event) => {
   // Cookies used here
   // setCookie: (
@@ -32,6 +34,7 @@ export default defineEventHandler(async (event) => {
   //     serializeOptions?: CookieSerializeOptions
   // ) => void;
 
+  // Set cookie password using env
   const cookieSet = setCookie(event, "graphcms-token", "COOKIE_PASSWORD222");
 
   const cookie = useCookie(event.req, "graphcms-token");

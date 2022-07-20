@@ -1,42 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 RC4 Coffee Lovers Web Application
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+<p align="center">Development Status</p>
 
-## Setup
 
-Make sure to install the dependencies:
+<p align="center">
+<img src="https://img.shields.io/github/license/ceodevforce/coffee-lovers?style=flat-square"/>
+</p>
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+<p align="center"><img src="https://img.shields.io/github/commit-activity/w/ceodevforce/coffee-lovers?style=for-the-badge"/>

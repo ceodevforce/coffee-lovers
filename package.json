@@ -17,6 +17,6 @@
     "graphql-request": "^4.3.0",
     "jsonwebtoken": "^8.5.1",
     "nuxt-graphql-client": "^0.0.33",
-    "pinia": "^2.0.14"
+    "pinia": "^2.0.16"
   }
 }

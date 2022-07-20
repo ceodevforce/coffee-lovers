@@ -37,6 +37,6 @@ const coffeeQuery = gql`
 export default defineEventHandler(async (event) => {
     const response = await client.request(coffeeQuery)
     return { 
-        data: response
+        response
      }
 })

@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const response = await client.request(createNuxtUserMutation, { userData })
-    console.log("RESPONSE", response)
+    // console.log("RESPONSE", response)
     
     if(!response?.CreateNuxtUser?.id) {
         event.res.end()

@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ['nuxt-graphql-client', '@nuxtjs/tailwindcss'],
+    modules: ['nuxt-graphql-client', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
     runtimeConfig: {
         JWT_SECRET_KEY:'',
         GRAPHQL_CMS_TOKEN_PERMISSIONS: '',

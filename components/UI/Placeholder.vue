@@ -1,5 +1,4 @@
 <template>
-
 <!-- Section 1 -->
 <section class="flex items-center justify-center py-20 bg-white min-w-screen">
     <div class="px-16 bg-white">

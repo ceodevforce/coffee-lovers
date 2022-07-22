@@ -1,12 +1,46 @@
 <script setup>
+import { useUserStore } from '../store/user'
+
+const store = useUserStore()
+const router = useRouter()
+const route = useRoute()
+
+
 const email = ref('')
 const password = ref('')
 const firstName = ref('')
 const lastName = ref('')
+const loading = ref(false)
 
-const registerHandler = async () => {
 
+
+const submitHandler = async () => {
+  loading.value = true
+
+  // const { api, token } = await $fetch('/api/signin', { method: 'POST', body: { 
+  //     email: email.value,
+  //     password: password.value
+  //  } })
+
+
+   const { data } = await useAsyncData('token', () => $fetch('/api/signin', { method: 'POST', body: { 
+      email: email.value,
+      password: password.value
+   } }))
+
+  console.log("USER", data)
+
+  const user = {
+      email: email.value,
+  }
+  store.authenticatedUser = true
+  store.user = user
+  loading.value = false
+  router.push('/')
 }
+
+// console.log(window.localStorage.getItem('token'))
+
 
 </script>
 <template>
@@ -41,10 +75,10 @@ const registerHandler = async () => {
                     </div>
 
                     <div class="mt-8">
-                        <form>
+                        <form @submit.prevent="submitHandler">
                             <div>
                                 <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                                <input type="email" name="email" id="email" placeholder="example@example.com" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input v-model="email" type="email" name="email" id="email" placeholder="example@example.com" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div class="mt-6">
@@ -53,7 +87,7 @@ const registerHandler = async () => {
                                     <a href="#" class="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</a>
                                 </div>
 
-                                <input type="password" name="password" id="password" placeholder="Your Password" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input v-model="password" type="password" name="password" id="password" placeholder="Your Password" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div class="mt-6">
@@ -73,3 +107,6 @@ const registerHandler = async () => {
     </div>
   </div>
 </template>
+<style>
+
+</style>

@@ -47,21 +47,6 @@ const registerHandler = async () => {
     loading.value = false
     router.push('/')
 
-    // if (users) {
-    //     store.setAuthenticatedUser(users)
-    //     router.push('/')
-    // }
-    // const user = {
-    //     email: email.value,
-    //     password: password.value,
-    //     firstName: firstName.value,
-    //     lastName: lastName.value
-    // }
-
-    // const response = await store.register(user)
-    // if (response.status === 200) {
-    //     router.push('/login')
-    // }    
 }
 
 onMounted(() => {
